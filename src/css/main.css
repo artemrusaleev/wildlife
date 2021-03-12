@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   -webkit-box-sizing: border-box;
@@ -15,6 +22,7 @@ body {
 
 .button {
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   background: #cd6326;
 }
@@ -74,8 +82,10 @@ body {
   position: relative;
   margin: 50px auto;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
   -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   display: none;
   cursor: pointer;
@@ -91,8 +101,10 @@ body {
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
   -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
 
@@ -111,7 +123,8 @@ body {
 #burger__icon.open>span:nth-child(1) {
   top: 12px;
   -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+      transform: rotate(135deg);
 }
 
 #burger__icon.open>span:nth-child(2) {
@@ -122,7 +135,8 @@ body {
 #burger__icon.open>span:nth-child(3) {
   top: 12px;
   -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+      transform: rotate(-135deg);
 }
 
 @media only screen and (max-width: 600px) {
@@ -133,8 +147,10 @@ body {
     height: fit-content;
     position: relative;
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     -webkit-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     cursor: pointer;
     margin: 12px;
@@ -153,11 +169,13 @@ body {
 .header.before::before {
   opacity: 0.6;
   -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -ms-transform: translateY(0);
+      transform: translateY(0);
 }
 
 .header::before {
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   content: "";
   width: 100%;
@@ -167,7 +185,8 @@ body {
   background: #000;
   opacity: 0;
   -webkit-transform: translateY(-200px);
-  transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+      transform: translateY(-200px);
   z-index: -100;
 }
 
@@ -211,8 +230,10 @@ body {
   .header__nav {
     opacity: 0;
     -webkit-transform: translateY(-200px);
-    transform: translateY(-200px);
+    -ms-transform: translateY(-200px);
+        transform: translateY(-200px);
     -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     position: absolute;
     top: 80px;
@@ -245,7 +266,8 @@ body {
 .burger__open {
   opacity: 1;
   -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -ms-transform: translateY(0);
+      transform: translateY(0);
 }
 
 .container {
@@ -493,12 +515,14 @@ body {
   justify-content: center;
   position: absolute;
   -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   top: 0;
   opacity: 0;
   z-index: -1;
   -webkit-transform: translateX(-100px);
-  transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+      transform: translateX(-100px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -519,7 +543,8 @@ body {
   z-index: 1;
   position: relative;
   -webkit-transform: translateX(0);
-  transform: translateX(0);
+  -ms-transform: translateX(0);
+      transform: translateX(0);
 }
 
 .slider__arrow {
@@ -548,12 +573,14 @@ body {
   opacity: 0.7;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .arrow__next {
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
 }
 
 .list__slide {
@@ -815,14 +842,56 @@ body {
   left: 50%;
   margin-left: -20px;
   opacity: 0;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
 #toTop.show {
   opacity: 1;
   z-index: 0;
+  -webkit-animation: pulse 3s infinite;
+          animation: pulse 3s infinite;
 }
 
 #toTop .arrow__img {
-  transform: rotate( 90deg);
+  -webkit-transform: rotate( 90deg);
+      -ms-transform: rotate( 90deg);
+          transform: rotate( 90deg);
+}
+
+@-webkit-keyframes pulse {
+  0%{
+    opacity: 0.1;
+  }
+	30% {
+		opacity: 0.1;
+	}
+	60% {
+		opacity: 0.6;
+	}
+	90% {
+		opacity: 0.9;
+	}
+  100% {
+		opacity: 1;
+	}
+}
+
+@keyframes pulse {
+  0%{
+    opacity: 0.1;
+  }
+	30% {
+		opacity: 0.1;
+	}
+	60% {
+		opacity: 0.6;
+	}
+	90% {
+		opacity: 0.9;
+	}
+  100% {
+		opacity: 1;
+	}
 }

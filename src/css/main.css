@@ -609,6 +609,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .list__slide {
+    width: 240px;
+  }
   .list__slide:nth-child(2) {
     margin: 10px 60px;
   }
